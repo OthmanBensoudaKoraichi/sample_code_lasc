@@ -10,9 +10,31 @@ Each case includes **3 to 5 PDF documents**, typically containing up to 100 page
 
 Although the schema below displays only **three nodes**, the actual system will run **dozens of parallel processes**. Note that the code currently runs a serial process.
 
----
+## Dev Setup (optional)
+### Quickstart
 
-### Pipeline Overview
+1. Create and activate your virtual environment
+```
+conda create -n myapp python=3.10 -y
+source activate myapp
+```
+2. Intall uv `pip install uv` (Read about the uv package manager [here](https://docs.astral.sh/uv/guides/projects/#managing-dependencies))
+
+3. activate your virtual environment
+```
+uv sync
+source .venv/bin/activate
+```
+### Additional Dev Notes
+- to add a dependency, simply run 
+```
+uv add <package>
+```
+- Read about the uv package manager [here](https://docs.astral.sh/uv/guides/projects/#managing-dependencies)
+
+
+
+## Pipeline Overview
 
 1. **OCR** – Convert scanned PDFs into machine-readable text  
 2. **Chunking & Vectorization** – Split the text and embed it into vector space  
